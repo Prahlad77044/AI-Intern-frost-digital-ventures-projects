@@ -1,0 +1,16 @@
+{
+  "cat2idx": {
+    "Rights": 0,
+    "Governance": 1,
+    "Judiciary": 2,
+    "Federalism": 3,
+    "Other": 4
+  },
+  "idx2cat": {
+    "0": "Rights",
+    "1": "Governance",
+    "2": "Judiciary",
+    "3": "Federalism",
+    "4": "Other"
+  }
+}
