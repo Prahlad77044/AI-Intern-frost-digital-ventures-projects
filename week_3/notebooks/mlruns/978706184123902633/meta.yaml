@@ -1,0 +1,6 @@
+artifact_location: file:///c:/Users/Acer/Desktop/projects/week_3/notebooks/mlruns/978706184123902633
+creation_time: 1765119074273
+experiment_id: '978706184123902633'
+last_update_time: 1765119074273
+lifecycle_stage: active
+name: resnet_cifar10_partial_unfreeze

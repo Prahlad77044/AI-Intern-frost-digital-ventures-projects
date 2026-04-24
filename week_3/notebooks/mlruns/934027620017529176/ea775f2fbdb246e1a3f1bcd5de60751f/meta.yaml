@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Acer/Desktop/projects/week_3/notebooks/mlruns/934027620017529176/ea775f2fbdb246e1a3f1bcd5de60751f/artifacts
+end_time: 1765125841611
+entry_point_name: ''
+experiment_id: '934027620017529176'
+lifecycle_stage: active
+run_id: ea775f2fbdb246e1a3f1bcd5de60751f
+run_name: training_run_1765123238
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765123238928
+status: 3
+tags: []
+user_id: Acer

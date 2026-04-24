@@ -1,0 +1,23 @@
+artifact_path: file:///c:/Users/Acer/Desktop/projects/week_3/notebooks/mlruns/934027620017529176/models/m-be07df629f6545fb84c14679d8900831/artifacts
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.11.0
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.5.1+cu121
+mlflow_version: 3.6.0
+model_id: m-be07df629f6545fb84c14679d8900831
+model_size_bytes: 44811678
+model_uuid: m-be07df629f6545fb84c14679d8900831
+prompts: null
+run_id: 5ba6870b96044567b33081be415360f7
+utc_time_created: '2025-12-05 11:17:24.000950'

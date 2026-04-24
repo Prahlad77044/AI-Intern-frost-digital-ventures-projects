@@ -1,0 +1,10 @@
+artifact_location: file:///c:/Users/Acer/Desktop/projects/week_3/notebooks/mlruns/934027620017529176/models/m-76ccfe75cee8499abef53ec350929489/artifacts
+creation_timestamp: 1765087420735
+experiment_id: '934027620017529176'
+last_updated_timestamp: 1765087441035
+model_id: m-76ccfe75cee8499abef53ec350929489
+model_type: null
+name: final_model
+source_run_id: 9dc9a54f7a614d8e8b945bc88cd4a91b
+status: 2
+status_message: null

@@ -1,0 +1,6 @@
+artifact_location: file:///c:/Users/Acer/Desktop/projects/week_3/notebooks/mlruns/934027620017529176
+creation_time: 1764929668204
+experiment_id: '934027620017529176'
+last_update_time: 1764929668204
+lifecycle_stage: active
+name: resnet_cifar10
