@@ -1,0 +1,563 @@
+{
+  "timestamp": "2025-12-11T14:00:05.803049",
+  "device": "cuda",
+  "model_path": "./imdb_lora_model",
+  "summary": {
+    "total_tests": 48,
+    "total_failures": 14,
+    "failure_rate": 0.2916666666666667,
+    "by_category": {
+      "negation_handling": {
+        "total": 11,
+        "correct": 8,
+        "incorrect": 3,
+        "needs_review": 0,
+        "accuracy": 0.7272727272727273
+      },
+      "sarcasm_detection": {
+        "total": 7,
+        "correct": 2,
+        "incorrect": 5,
+        "needs_review": 0,
+        "accuracy": 0.2857142857142857
+      },
+      "out-of-domain_inputs": {
+        "total": 14,
+        "correct": 11,
+        "incorrect": 0,
+        "needs_review": 3,
+        "accuracy": 1.0
+      },
+      "mixed_sentiment": {
+        "total": 5,
+        "correct": 0,
+        "incorrect": 0,
+        "needs_review": 5,
+        "accuracy": null
+      },
+      "subtle_sentiment": {
+        "total": 7,
+        "correct": 1,
+        "incorrect": 0,
+        "needs_review": 6,
+        "accuracy": 1.0
+      },
+      "edge_cases": {
+        "total": 0,
+        "correct": 0,
+        "incorrect": 0,
+        "needs_review": 0,
+        "accuracy": null
+      },
+      "toxicity_offensiveness": {
+        "total": 4,
+        "correct": 0,
+        "incorrect": 0,
+        "needs_review": 0,
+        "accuracy": null
+      }
+    }
+  },
+  "detailed_results": {
+    "negation_handling": [
+      {
+        "test_num": 1,
+        "text": "This movie is not good",
+        "predicted": "Negative",
+        "confidence": 0.9541,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 2,
+        "text": "I don't like this film",
+        "predicted": "Negative",
+        "confidence": 0.9399,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 3,
+        "text": "This is not bad at all",
+        "predicted": "Positive",
+        "confidence": 0.6817,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 4,
+        "text": "I can't say I disliked it",
+        "predicted": "Positive",
+        "confidence": 0.6037,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 5,
+        "text": "It's not that I didn't enjoy it",
+        "predicted": "Negative",
+        "confidence": 0.6118,
+        "expected": "Positive",
+        "correct": false
+      },
+      {
+        "test_num": 6,
+        "text": "I wouldn't say it's not worth watching",
+        "predicted": "Negative",
+        "confidence": 0.7849,
+        "expected": "Positive",
+        "correct": false
+      },
+      {
+        "test_num": 7,
+        "text": "Despite not being perfect, I loved it",
+        "predicted": "Positive",
+        "confidence": 0.998,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 8,
+        "text": "Though I didn't hate it, I wouldn't recommend it",
+        "predicted": "Negative",
+        "confidence": 0.5558,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 9,
+        "text": "I never thought I would not enjoy this",
+        "predicted": "Positive",
+        "confidence": 0.8071,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 10,
+        "text": "Not a masterpiece but still great",
+        "predicted": "Positive",
+        "confidence": 0.9987,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 11,
+        "text": "Not terrible but not good either",
+        "predicted": "Positive",
+        "confidence": 0.7878,
+        "expected": "Negative",
+        "correct": false
+      }
+    ],
+    "sarcasm_detection": [
+      {
+        "test_num": 1,
+        "text": "Oh great, another predictable ending",
+        "predicted": "Negative",
+        "confidence": 0.7406,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 2,
+        "text": "Wow, what a 'masterpiece' this turned out to be",
+        "predicted": "Positive",
+        "confidence": 0.986,
+        "expected": "Negative",
+        "correct": false
+      },
+      {
+        "test_num": 3,
+        "text": "Sure, because the world needed another sequel",
+        "predicted": "Negative",
+        "confidence": 0.5742,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 4,
+        "text": "Yeah, two hours of my life I'll never get back",
+        "predicted": "Positive",
+        "confidence": 0.8242,
+        "expected": "Negative",
+        "correct": false
+      },
+      {
+        "test_num": 5,
+        "text": "Brilliant. Just brilliant. If you like wasting time.",
+        "predicted": "Positive",
+        "confidence": 0.9577,
+        "expected": "Negative",
+        "correct": false
+      },
+      {
+        "test_num": 6,
+        "text": "The acting was so 'natural' I couldn't stop laughing",
+        "predicted": "Positive",
+        "confidence": 0.787,
+        "expected": "Negative",
+        "correct": false
+      },
+      {
+        "test_num": 7,
+        "text": "A stunning achievement in putting audiences to sleep",
+        "predicted": "Positive",
+        "confidence": 0.9988,
+        "expected": "Negative",
+        "correct": false
+      }
+    ],
+    "out-of-domain_inputs": [
+      {
+        "test_num": 1,
+        "text": "This phone has amazing battery life",
+        "predicted": "Positive",
+        "confidence": 0.9833,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 2,
+        "text": "The laptop keyboard is uncomfortable to type on",
+        "predicted": "Negative",
+        "confidence": 0.7362,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 3,
+        "text": "Best headphones I've ever purchased",
+        "predicted": "Positive",
+        "confidence": 0.9939,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 4,
+        "text": "The food was delicious and service was excellent",
+        "predicted": "Positive",
+        "confidence": 0.9891,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 5,
+        "text": "Cold food and rude waiters ruined the experience",
+        "predicted": "Negative",
+        "confidence": 0.9577,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 6,
+        "text": "Couldn't put this book down, truly captivating",
+        "predicted": "Positive",
+        "confidence": 0.9572,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 7,
+        "text": "Boring plot with underdeveloped characters",
+        "predicted": "Negative",
+        "confidence": 0.9979,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 8,
+        "text": "Clean rooms and helpful staff made our stay wonderful",
+        "predicted": "Positive",
+        "confidence": 0.9972,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 9,
+        "text": "Dirty room with broken AC in summer heat",
+        "predicted": "Negative",
+        "confidence": 0.8971,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 10,
+        "text": "Customer support was helpful and resolved my issue quickly",
+        "predicted": "Positive",
+        "confidence": 0.884,
+        "expected": "Positive",
+        "correct": true
+      },
+      {
+        "test_num": 11,
+        "text": "Waited on hold for an hour with no resolution",
+        "predicted": "Negative",
+        "confidence": 0.6709,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 12,
+        "text": "The movie is 2 hours long",
+        "predicted": "Positive",
+        "confidence": 0.8908,
+        "expected": "Neutral",
+        "correct": "Review"
+      },
+      {
+        "test_num": 13,
+        "text": "It stars Tom Hanks and was released in 2020",
+        "predicted": "Positive",
+        "confidence": 0.9593,
+        "expected": "Neutral",
+        "correct": "Review"
+      },
+      {
+        "test_num": 14,
+        "text": "The film is directed by Christopher Nolan",
+        "predicted": "Positive",
+        "confidence": 0.8909,
+        "expected": "Neutral",
+        "correct": "Review"
+      }
+    ],
+    "mixed_sentiment": [
+      {
+        "test_num": 1,
+        "text": "Great acting but terrible plot",
+        "predicted": "Negative",
+        "confidence": 0.9467,
+        "expected": "Mixed",
+        "correct": "Review"
+      },
+      {
+        "test_num": 2,
+        "text": "Beautiful cinematography can't save the boring story",
+        "predicted": "Negative",
+        "confidence": 0.9475,
+        "expected": "Mixed",
+        "correct": "Review"
+      },
+      {
+        "test_num": 3,
+        "text": "I loved the visuals but hated the ending",
+        "predicted": "Negative",
+        "confidence": 0.9316,
+        "expected": "Mixed",
+        "correct": "Review"
+      },
+      {
+        "test_num": 4,
+        "text": "Amazing special effects, disappointing character development",
+        "predicted": "Negative",
+        "confidence": 0.9835,
+        "expected": "Mixed",
+        "correct": "Review"
+      },
+      {
+        "test_num": 5,
+        "text": "The first half was brilliant, second half fell apart",
+        "predicted": "Positive",
+        "confidence": 0.9474,
+        "expected": "Mixed",
+        "correct": "Review"
+      }
+    ],
+    "subtle_sentiment": [
+      {
+        "test_num": 1,
+        "text": "It was okay, I guess",
+        "predicted": "Positive",
+        "confidence": 0.6986,
+        "expected": "Neutral/Negative",
+        "correct": "Review"
+      },
+      {
+        "test_num": 2,
+        "text": "Not my cup of tea",
+        "predicted": "Negative",
+        "confidence": 0.8386,
+        "expected": "Negative",
+        "correct": true
+      },
+      {
+        "test_num": 3,
+        "text": "It has its moments",
+        "predicted": "Positive",
+        "confidence": 0.997,
+        "expected": "Neutral/Positive",
+        "correct": "Review"
+      },
+      {
+        "test_num": 4,
+        "text": "Could have been worse",
+        "predicted": "Negative",
+        "confidence": 0.6509,
+        "expected": "Neutral/Negative",
+        "correct": "Review"
+      },
+      {
+        "test_num": 5,
+        "text": "It's fine for what it is",
+        "predicted": "Positive",
+        "confidence": 0.9271,
+        "expected": "Neutral",
+        "correct": "Review"
+      },
+      {
+        "test_num": 6,
+        "text": "Meh",
+        "predicted": "Positive",
+        "confidence": 0.5826,
+        "expected": "Neutral",
+        "correct": "Review"
+      },
+      {
+        "test_num": 7,
+        "text": "It exists",
+        "predicted": "Positive",
+        "confidence": 0.8997,
+        "expected": "Neutral",
+        "correct": "Review"
+      }
+    ],
+    "edge_cases": [],
+    "toxicity_offensiveness": [
+      {
+        "test_num": 1,
+        "text": "This movie is absolute garbage and anyone who likes it is stupid",
+        "predicted": "Negative",
+        "confidence": 0.9913,
+        "expected": null,
+        "correct": null
+      },
+      {
+        "test_num": 2,
+        "text": "The director should never work again, what a talentless hack",
+        "predicted": "Negative",
+        "confidence": 0.9845,
+        "expected": null,
+        "correct": null
+      },
+      {
+        "test_num": 3,
+        "text": "Worst piece of trash I've ever seen, complete waste",
+        "predicted": "Negative",
+        "confidence": 0.9924,
+        "expected": null,
+        "correct": null
+      },
+      {
+        "test_num": 4,
+        "text": "I hate everything about this terrible film",
+        "predicted": "Negative",
+        "confidence": 0.8978,
+        "expected": null,
+        "correct": null
+      }
+    ]
+  },
+  "failures": {
+    "negation_handling": [
+      {
+        "text": "It's not that I didn't enjoy it",
+        "expected": "Positive",
+        "predicted": "Negative",
+        "confidence": 0.6117589473724365
+      },
+      {
+        "text": "I wouldn't say it's not worth watching",
+        "expected": "Positive",
+        "predicted": "Negative",
+        "confidence": 0.7848966717720032
+      },
+      {
+        "text": "Not terrible but not good either",
+        "expected": "Negative",
+        "predicted": "Positive",
+        "confidence": 0.7878496050834656
+      }
+    ],
+    "sarcasm_detection": [
+      {
+        "text": "Wow, what a 'masterpiece' this turned out to be",
+        "expected": "Negative",
+        "predicted": "Positive",
+        "confidence": 0.9859634041786194
+      },
+      {
+        "text": "Yeah, two hours of my life I'll never get back",
+        "expected": "Negative",
+        "predicted": "Positive",
+        "confidence": 0.8241790533065796
+      },
+      {
+        "text": "Brilliant. Just brilliant. If you like wasting time.",
+        "expected": "Negative",
+        "predicted": "Positive",
+        "confidence": 0.9577149748802185
+      },
+      {
+        "text": "The acting was so 'natural' I couldn't stop laughing",
+        "expected": "Negative",
+        "predicted": "Positive",
+        "confidence": 0.7870323657989502
+      },
+      {
+        "text": "A stunning achievement in putting audiences to sleep",
+        "expected": "Negative",
+        "predicted": "Positive",
+        "confidence": 0.998816728591919
+      }
+    ],
+    "out-of-domain_inputs": [],
+    "mixed_sentiment": [],
+    "subtle_sentiment": [],
+    "edge_cases": [
+      {
+        "text": [
+          "",
+          "Should handle empty"
+        ],
+        "error": "Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected)."
+      },
+      {
+        "text": [
+          "a",
+          "Too short"
+        ],
+        "error": "Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected)."
+      },
+      {
+        "text": [
+          "Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! Great! ",
+          "Very long repetition"
+        ],
+        "error": "Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected)."
+      },
+      {
+        "text": [
+          "\ud83c\udfac\ud83c\udf7f\ud83d\udc4d",
+          "Only emojis"
+        ],
+        "error": "Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected)."
+      },
+      {
+        "text": [
+          "AMAZING AMAZING AMAZING!!!",
+          "All caps with repetition"
+        ],
+        "error": "Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected)."
+      },
+      {
+        "text": [
+          "This is... something.",
+          "Vague sentiment"
+        ],
+        "error": "Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`input_ids` in this case) have excessive nesting (inputs type `list` where type `int` is expected)."
+      }
+    ],
+    "toxicity_offensiveness": []
+  },
+  "recommendations": []
+}

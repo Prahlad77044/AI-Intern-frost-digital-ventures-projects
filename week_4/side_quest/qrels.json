@@ -1,0 +1,54 @@
+{
+  "queries": [
+    {
+      "id": 0,
+      "query": "current trends in global stock markets",
+      "relevant": [0, 22, 41, 7]
+    },
+    {
+      "id": 1,
+      "query": "advancements in artificial intelligence technology",
+      "relevant": [1, 35, 28, 4, 15]
+    },
+    {
+      "id": 2,
+      "query": "national and international football championships",
+      "relevant": [2, 33, 38, 44]
+    },
+    {
+      "id": 3,
+      "query": "latest breakthroughs in cancer research and treatments",
+      "relevant": [3, 30, 37, 25]
+    },
+    {
+      "id": 4,
+      "query": "innovations in renewable energy and sustainable power",
+      "relevant": [9, 19, 27, 48, 42]
+    },
+    {
+      "id": 5,
+      "query": "growth and trends in electric vehicles market",
+      "relevant": [16, 15, 20]
+    },
+    {
+      "id": 6,
+      "query": "current space exploration missions and discoveries",
+      "relevant": [6, 39, 31]
+    },
+    {
+      "id": 7,
+      "query": "educational apps and technology-enhanced learning",
+      "relevant": [23, 40, 43, 18]
+    },
+    {
+      "id": 8,
+      "query": "newly launched smartphones and smart devices",
+      "relevant": [20, 46, 1]
+    },
+    {
+      "id": 9,
+      "query": "global economic developments and international summits",
+      "relevant": [7, 36, 47, 14]
+    }
+  ]
+}
